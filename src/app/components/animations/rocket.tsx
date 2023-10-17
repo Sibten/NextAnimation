@@ -1,40 +1,58 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./rocket.css";
-export default function Rocket({ isTakeoff = false }: { isTakeoff: boolean }) {
-  const [rocketEffect, setRocketEffect] = useState<boolean>(false);
 
-  const [lunchRocket, setLunchRocket] = useState<boolean>(false);
+export default function Rocket() {
+  const [ignitionOn, setIgnition] = useState<boolean>(false);
+
+  const [takeofRocket, setTakeOff] = useState<boolean>(false);
 
   useEffect(() => {
-    let timeout: string | number | NodeJS.Timeout | undefined = undefined;
-    if (isTakeoff) {
-      setRocketEffect(true);
-      timeout = setTimeout(() => setRocketEffect(false), 2000);
-      setTimeout(() => setLunchRocket(true), 1000);
+    if (ignitionOn) {
+      setTimeout(() => {
+        setTimeout(() => {
+          setIgnition(false);
+        }, 500);
+        setTakeOff(true);
+      }, 1000);
     }
-
-    return () => clearTimeout(timeout);
-  }, [isTakeoff]);
+  }, [ignitionOn]);
 
   return (
-    <div className="flex flex-col">
-      <div className="mx-auto w-max">
-        {" "}
+    <>
+      {/* Rocket */}
+      <div
+        className={`absolute bottom-[3.1rem] flex  justify-center ${
+          takeofRocket ? "flex-col" : ""
+        } align-middle w-full`}
+      >
         <img
-          src="https://cdn-icons-png.flaticon.com/128/5566/5566679.png"
+          src="https://cdn-icons-png.flaticon.com/128/1374/1374694.png"
           alt="rocket"
+          className="w-24 mx-auto ans"
         />
+        {takeofRocket ? (
+          <div className="flame w-8 h-2 mx-auto bg-white"></div>
+        ) : null}{" "}
+        {ignitionOn ? (
+          <>
+            {" "}
+            <div className="w-24 h-24   bg-gray-50 absolute rounded-full -z-10 mt-6 ignition"></div>
+            <div className="w-48 h-48   bg-gray-50 absolute rounded-full -z-10 mt-8 ignition"></div>
+            <div className="w-36 h-36   bg-gray-50 absolute rounded-full -z-10 mt-2 ignition"></div>
+          </>
+        ) : null}
       </div>
-      {lunchRocket ? (
-        <div className="mx-auto h-4 bg-gray-100 w-8 animate-pulse flame"></div>
-      ) : null}
-      {rocketEffect ? (
-        <>
-          <div className="h-24 w-24 effect -z-10 absolute bottom-0 rounded-full bg-gray-200"></div>
-          <div className="h-36 mx-10 w-36 effect -z-10 absolute bottom-0 rounded-full bg-gray-200"></div>{" "}
-          <div className="h-48 mx-8 w-48 effect -z-10 absolute bottom-0 rounded-full bg-gray-200"></div>{" "}
-        </>
-      ) : null}
-    </div>
+      {/* Controls */}
+      <div className="absolute bottom-2 flex justify-center w-full">
+        <button
+          className="bg-yellow-500 p-2 rounded-md font-nunito font-bold tracking-wider text-black"
+          onClick={() => setIgnition(true)}
+        >
+          {" "}
+          Lunch Rocket{" "}
+        </button>
+      </div>
+    </>
   );
 }

@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito:wght@300;500&family=Poppins:wght@300;400&family=Quicksand:wght@400;500&family=Varela+Round&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-	background-image: url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=612x612&w=0&k=20&c=gHxe5jJTShVOFI2H8g4_PSmx93P1Z1Q-h1-QsbWODpk=");
+body {
+  background-image: url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=612x612&w=0&k=20&c=gHxe5jJTShVOFI2H8g4_PSmx93P1Z1Q-h1-QsbWODpk=");
 
+  font-family: "Poppins", sans-serif;
 }
+
+

@@ -29,6 +29,10 @@ export default function AnimatedPage() {
 
   return (
     <div className="flex flex-wrap">
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/8753/8753024.png"
+        alt="sorry"
+      />
       {flippedIndex}
       {array.map((s, i) => (
         <>
