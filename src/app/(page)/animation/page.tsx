@@ -11,7 +11,6 @@ export default function AnimatedPage() {
 
   useEffect(() => {
     MSG = MSG.replace(" ", "");
-    console.log(MSG);
     setArray(MSG.split(""));
   }, []);
 
