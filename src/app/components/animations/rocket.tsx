@@ -35,7 +35,7 @@ export default function Rocket() {
         <img
           src="https://cdn-icons-png.flaticon.com/128/1374/1374694.png"
           alt="rocket"
-          className="w-24 mx-auto ans"
+          className="w-24 mx-auto rocket"
         />
         {takeofRocket ? (
           <div className="flame w-8 h-2 mx-auto bg-white"></div>
