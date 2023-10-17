@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./rocket.css";
+import { useRouter } from "next/navigation";
 
 export default function Rocket() {
+  const route = useRouter();
   const [ignitionOn, setIgnition] = useState<boolean>(false);
 
   const [takeofRocket, setTakeOff] = useState<boolean>(false);
@@ -12,9 +14,13 @@ export default function Rocket() {
       setTimeout(() => {
         setTimeout(() => {
           setIgnition(false);
-        }, 500);
+        }, 100);
         setTakeOff(true);
       }, 1000);
+
+      setTimeout(() => {
+        route.push("/animation");
+      }, 3000);
     }
   }, [ignitionOn]);
 

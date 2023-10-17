@@ -2,7 +2,7 @@
   perspective: 1000px;
   width: 6rem;
   height: 6rem;
-  padding: 20px;
+  padding: 4px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 2s;

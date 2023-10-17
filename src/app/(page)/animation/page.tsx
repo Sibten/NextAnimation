@@ -28,17 +28,19 @@ export default function AnimatedPage() {
   });
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-col align-middle">
       <img
         src="https://cdn-icons-png.flaticon.com/128/8753/8753024.png"
         alt="sorry"
+        className="w-16 h-16 my-4 mx-auto"
       />
-      {flippedIndex}
-      {array.map((s, i) => (
-        <>
-          <Card text={s.toUpperCase()} isFlip={i == flippedIndex}></Card>
-        </>
-      ))}
+      <div className="flex flex-wrap p-2 justify-center">
+        {array.map((s, i) => (
+          <>
+            <Card text={s.toUpperCase()} isFlip={i == flippedIndex}></Card>
+          </>
+        ))}
+      </div>
     </div>
   );
 }
