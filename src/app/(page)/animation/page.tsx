@@ -6,6 +6,13 @@ import React, { useEffect, useRef, useState } from "react";
 export default function AnimatedPage() {
   let MSG = useRef("SORRY KRISHNA");
 
+  const specialMesg =
+    " Dear, I'm really so sorry, for my past behaviour. I hope you willunderstand this message!, please forgot all bad experince from my side. I'm truly sorry for any inconvenience I may have caused.Please accept my sincere apologies.";
+
+  const Author = "Sibten";
+
+  const CopyRight = "Developed and Designed by Sibten";
+
   const [array, setArray] = useState<Array<string>>([]);
 
   const [flippedIndex, setFlippedIndex] = useState<number>(-1);
@@ -70,18 +77,13 @@ export default function AnimatedPage() {
               Message{" "}
             </h1>
 
-            <p className="tracking-wide text-justify">
-              Dear Krishna, I'm really so sorry, for my past behaviour. I hope
-              you will understand this message!, please forgot all bad experince
-              from my side. I'm truly sorry for any inconvenience. Please accept
-              my sincere apologies.{" "}
-            </p>
-            <p className="text-right w-full"> - Sibten</p>
+            <p className="tracking-wide text-justify">{specialMesg}</p>
+            <p className="text-right w-full">{Author}</p>
           </div>
         </div>
       </div>
       <div className="bottom-8 text-center w-full fixed">
-        <p className="text-white">&copy; Developed and Designed by Sibten</p>
+        <p className="text-white">&copy; {CopyRight}</p>
       </div>
     </div>
   );
