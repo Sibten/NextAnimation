@@ -4,7 +4,7 @@ import "./animation.css";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function AnimatedPage() {
-  let MSG = useRef("Welcome User");
+  let MSG = useRef("SORRY KRISHNA");
 
   const [array, setArray] = useState<Array<string>>([]);
 
@@ -29,7 +29,7 @@ export default function AnimatedPage() {
   });
 
   return (
-    <>
+    <div>
       <img
         src="https://cdn-icons-png.flaticon.com/128/1374/1374694.png"
         alt="rocket"
@@ -53,7 +53,36 @@ export default function AnimatedPage() {
             </>
           ))}
         </div>
+
+        <div
+          className={`transition-opacity duration-[1000ms] ${
+            flippedIndex == array.length ? "opacity-100" : "opacity-0"
+          } w-full  text-sm md:w-max md:mx-auto my-8 border border-gray-400 rounded-lg p-2 text-white flex items-center shadow-md`}
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/256/8531/8531915.png"
+            alt="Sorry greeting"
+            className="w-24 h-24"
+          />
+          <div className="w-full ">
+            <h1 className="text-lg font-poppins font-bold text-yellow-500">
+              {" "}
+              Message{" "}
+            </h1>
+
+            <p className="tracking-wide text-justify">
+              Dear Krishna, I'm really so sorry, for my past behaviour. I hope
+              you will understand this message!, please forgot all bad experince
+              from my side. I'm truly sorry for any inconvenience. Please accept
+              my sincere apologies.{" "}
+            </p>
+            <p className="text-right w-full"> - Sibten</p>
+          </div>
+        </div>
       </div>
-    </>
+      <div className="bottom-8 text-center w-full fixed">
+        <p className="text-white">&copy; Developed and Designed by Sibten</p>
+      </div>
+    </div>
   );
 }
