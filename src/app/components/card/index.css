@@ -44,7 +44,6 @@
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(245,0,87,1) 0%, rgba(185,1,81,1) 90% );
 }
 
-
 .flip-card-back {
   background-image: radial-gradient( circle 957px at 8.7% 50.5%,  rgb(169, 131, 6) 0%, rgb(240, 96, 96) 90% );
   transform: rotateY(180deg);

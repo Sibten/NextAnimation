@@ -7,7 +7,7 @@ export default function AnimatedPage() {
   let MSG = useRef("SORRY KRISHNA");
 
   const specialMesg =
-    " Dear, I'm really so sorry, for my past behaviour. I hope you willunderstand this message!, please forgot all bad experince from my side. I'm truly sorry for any inconvenience I may have caused.Please accept my sincere apologies.";
+    " Dear, I'm really so sorry, for my past behaviour. I hope you will understand this message!, please forgot all bad experince from my side. I'm truly sorry for any inconvenience I may have caused.Please accept my sincere apologies.";
 
   const Author = "Sibten";
 
