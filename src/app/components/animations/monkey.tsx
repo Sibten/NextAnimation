@@ -9,7 +9,7 @@ export default function Monkey({
   title,
   position = "left",
 }: {
-  image: string;
+  image?: string;
   visibleMonkey: boolean;
   callBack?: Function;
   message: string;
